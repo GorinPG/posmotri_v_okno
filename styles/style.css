@@ -120,16 +120,8 @@ ol {
 .search-form__textfield:focus,
 .search-form__checkbox:focus + span,
 .button:focus,
-.content__video-card:focus{
+.content__list-item:focus{
   outline: none;
-}
-
-.search-form__textfield:focus-visible,
-.search-form__label:has(input[type='checkbox']:focus-visible),
-.button:focus-visible,
-.content__video-card:focus-visible{
-  outline: 1px solid #fff;
-  outline-offset: 2px;
 }
 
 .search-form__textfield::placeholder{
@@ -234,11 +226,14 @@ ol {
   inline-size: 0;
 }
 
+.content__list-item{
+  margin: 6px;
+}
+
 .content__video-card{
-  margin: 3px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 104px;
+  display: flex;
+  justify-content: space-between;
+  block-size: 103px;
 }
 
 .content__video-card:active{
@@ -249,7 +244,7 @@ ol {
 .content__video-card-thumbnail{
   object-fit: cover;
   object-position: center;
-  inline-size: 100%;
+  inline-size: 200px;
   block-size: 100%;
   justify-self: end;
   align-self: center;
@@ -260,6 +255,20 @@ ol {
   color: inherit;
   list-style: none;
 }
+
+.search-form__textfield:focus-visible,
+.search-form__label:has(input[type='checkbox']:focus-visible),
+.button:focus-visible,
+.content__list-item:has(:focus-visible){
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.content__card-link:focus-visible,
+.content__video-card:focus-visible{
+  outline: none;
+}
+
 
 .content__card-link_current > .content__video-card{
   background-color: #545050;
